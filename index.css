@@ -159,13 +159,18 @@ nav
     margin: 0 auto 2rem;
     padding: 210px 2rem 3rem;
     width: 100%;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(2.5rem, 6vw, 6rem);
     
 }
 
 .descripcion
 {  
-    width: min(40%, 520px);
+    width: 100%;
+    max-width: 560px;
+    justify-self: end;
 }
 .descripcion p
 {
@@ -182,15 +187,15 @@ nav
 
 .imagenfila
 {
-
-            flex-direction: column;
-            align-items: stretch;
-    width: min(35%, 560px);
+    width: 100%;
+    max-width: 560px;
+    justify-self: start;
     background-image: url(/garage.png);
     background-size: cover;
     background-position: center;
-            padding: 0.7rem 0.85rem;
-            font-size: 0.95rem;
+    border-radius: 20px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.38);
+    overflow: hidden;
 
 }
 
@@ -616,9 +621,11 @@ footer
 
     .principio
     {
+        display: flex;
         padding: 2rem 1rem 1rem;
         margin-bottom: 0;
         flex-direction: column;
+        gap: 1.5rem;
     }
 
     .descripcion,
