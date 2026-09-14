@@ -19,6 +19,19 @@ body
     max-width: 2000px;
 }
 
+*,
+*::before,
+*::after
+{
+    box-sizing: border-box;
+}
+
+img,
+iframe
+{
+    max-width: 100%;
+}
+
 header
 {
 
@@ -34,6 +47,8 @@ nav
     border-width: 1px;
     position: fixed; 
     max-width: 2000px;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.15);
 
 }
 
@@ -54,9 +69,10 @@ nav
 .list-navegacion
 {
 
-    padding-left: 90px;
-    width: 45%; 
+    padding-left: 0;
+    width: 60%;
     list-style: none;
+    gap: 1.5rem;
     
 }
 
@@ -72,7 +88,7 @@ nav
 
 .listas
 {
-    padding-left: 100px;
+    padding-left: 0;
     
 }
 
@@ -98,12 +114,13 @@ nav
     margin-bottom: 30px;
     padding-bottom: 30px;
     width: 100%;
+    gap: 2rem;
     
 }
 
 .descripcion
 {  
-    width: 40%;
+    width: min(40%, 520px);
 }
 .descripcion p
 {
@@ -120,7 +137,7 @@ nav
 .imagenfila
 {
 
-    width: 35%;
+    width: min(35%, 560px);
     background-image: url(/garage.png);
     background-size: cover;
     background-position: center;
@@ -151,7 +168,7 @@ nav
 .auto2
 { 
 
-    width: 50%;
+    width: min(50%, 700px);
     margin-top: 50px;
     padding-top: 50px;  
     display: flex;
@@ -275,6 +292,7 @@ footer
 
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     
 }
 
@@ -336,6 +354,7 @@ footer
     border-radius: 10px;
     margin: 8px;
     text-decoration: none;
+    overflow-wrap: anywhere;
 
 }
 
@@ -370,5 +389,101 @@ footer
 
     opacity: 0.8;
 
+}
+
+@media (max-width: 768px)
+{
+    nav
+    {
+        position: relative;
+    }
+
+    .logo
+    {
+        width: 120px;
+    }
+
+    .list-navegacion
+    {
+        width: 100%;
+        padding: 0.5rem 1rem 0.75rem;
+        gap: 0.75rem;
+    }
+
+    .listas a
+    {
+        font-size: 1.5em;
+    }
+
+    .principio
+    {
+        padding: 2rem 1rem;
+        margin-bottom: 0;
+        flex-direction: column;
+    }
+
+    .descripcion,
+    .imagenfila
+    {
+        width: 100%;
+    }
+
+    .descripcion p
+    {
+        font-size: 1.7em;
+    }
+
+    .contenedor2
+    {
+        padding: 0 1rem;
+    }
+
+    .auto2
+    {
+        width: 100%;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+    }
+
+    .auto2 img
+    {
+        width: min(100%, 360px);
+    }
+
+    .botoncoleccion
+    {
+        width: 100%;
+        font-size: 2em;
+    }
+
+    .login-regist
+    {
+        padding: 0 1rem;
+        font-size: 1.1em;
+    }
+
+    footer
+    {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .contenedorfoot,
+    .contenedorfoot2
+    {
+        width: 100%;
+    }
+
+    .contenedorfoot2 iframe
+    {
+        width: min(100%, 320px);
+    }
+
+    .sisi
+    {
+        max-width: 100%;
+        align-items: center;
+    }
 }
 
