@@ -12,8 +12,13 @@ body
 {
 
     width: 100%;
-    background-image: url(wallpaperbetter.jpg);
-    background-size: contain;
+    min-height: 100vh;
+    background-color: #171717;
+    background-image: linear-gradient(rgba(16, 16, 16, 0.52), rgba(16, 16, 16, 0.72)), url(wallpaperbetter.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     margin: 0;
     padding: 0;
     max-width: 2000px;
@@ -129,9 +134,9 @@ nav
 
 .principio
 {
-    padding-top: 210px;
-    margin-bottom: 30px;
-    padding-bottom: 30px;
+    max-width: 1400px;
+    margin: 0 auto 2rem;
+    padding: 210px 2rem 3rem;
     width: 100%;
     gap: 2rem;
     
@@ -171,43 +176,73 @@ nav
     width: 100%;
     display: flex;
     justify-content: center;
+    padding: 2rem;
 
 }
 
 .contenedor2
 {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;    
+    width: min(100%, 1400px);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
 
 }
 
 .auto2
 { 
 
-    width: min(50%, 700px);
-    margin-top: 50px;
-    padding-top: 50px;  
+    width: 100%;
+    min-height: 620px;
+    padding: 1.5rem 1.5rem 1.75rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    
+    background-color: rgba(15, 15, 15, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+
+}
+
+.auto2:hover
+{
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.55);
 
 }
 
 .auto2 img
 {
 
-    width: 50%;
+    width: min(100%, 380px);
+    aspect-ratio: 16 / 10;
     object-fit: contain;
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-    box-shadow: #660808 0.3em 0.3em 0.9em;
-    border-radius: 25px;
+    margin-bottom: 1.25rem;
+    padding: 0.5rem;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+
+}
+
+.auto2 p
+{
+    width: 100%;
+    max-width: 440px;
+    padding: 0.25rem 0;
+    font-size: 1.15em;
+    line-height: 1.35;
+
+}
+
+.auto2 p:first-of-type
+{
+    margin-bottom: 0.35rem;
+    color: #ffdf9a;
+    font-size: 1.35em;
 
 }
 
@@ -230,6 +265,8 @@ p
 
 .botoncoleccion
 {
+    grid-column: 1 / -1;
+    justify-self: center;
     margin-top: 30px;
     margin-bottom: 40px;
     color: white;
@@ -310,8 +347,13 @@ footer
 {
 
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    align-items: start;
+    padding: 3rem max(2rem, 5vw);
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    background-color: rgba(8, 8, 8, 0.84);
     
 }
 
@@ -320,9 +362,10 @@ footer
 .contenedorfoot
 {
 
-    width: 35%;
+    width: 100%;
+    min-width: 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
@@ -335,7 +378,11 @@ footer
 
 {
 
-    color: white;
+    width: 100%;
+    margin: 0 0 1rem;
+    color: #ffdf9a;
+    text-align: center;
+    letter-spacing: 0.08em;
     text-shadow: 1.4px 1.4px black;
     font-size: 1.2em;
    
@@ -346,7 +393,10 @@ footer
 
 .sisi
 
-{
+    width: 100%;
+    max-width: 280px;
+    margin-bottom: 0.5rem;
+    align-items: center;
     
     display: flex;
     
@@ -356,22 +406,23 @@ footer
 .ubi
 {
 
-    width: 16px;
-    height: 16px;
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+    padding: 3px;
     background-color: white;
-    border-radius: 8px;
+    border-radius: 50%;
 
 }
 
 .hiper
 {
 
-    font-family: 'roboto2';
-    font-size: 1.2em;
-    color: black;
-    background-color: white;
-    border-radius: 10px;
-    margin: 8px;
+    margin: 0 0 0 0.65rem;
+    color: #f4f0e8;
+    font-family: "shadow";
+    font-size: 1.1em;
+    line-height: 1.2;
     text-decoration: none;
     overflow-wrap: anywhere;
 
@@ -384,9 +435,8 @@ footer
 
 .contenedorfoot2
 {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    width: 35%;
+    width: 100%;
+    min-width: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -395,11 +445,31 @@ footer
 
 }
 
+.contenedorfoot2 h4
+{
+    margin: 0 0 1rem;
+    color: #ffdf9a;
+    letter-spacing: 0.08em;
+    text-shadow: 1.4px 1.4px black;
+    font-size: 1.2em;
+}
+
+.contenedorfoot2 iframe
+{
+    width: min(100%, 320px);
+    min-height: 240px;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
 .redes
 {
 
-    width: 32px;
-    margin-top: 3px;
+    width: 28px;
+    height: 28px;
+    margin: 0.2rem;
+    object-fit: contain;
 
 }
 
@@ -464,7 +534,7 @@ footer
 
     .principio
     {
-        padding: 2rem 1rem;
+        padding: 2rem 1rem 1rem;
         margin-bottom: 0;
         flex-direction: column;
     }
@@ -482,19 +552,32 @@ footer
 
     .contenedor2
     {
-        padding: 0 1rem;
+        width: 100%;
+        padding: 0;
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
     .auto2
     {
         width: 100%;
-        margin-top: 1.5rem;
-        padding-top: 1.5rem;
+        min-height: 0;
+        padding: 1.25rem 1rem 1.5rem;
     }
 
     .auto2 img
     {
         width: min(100%, 360px);
+    }
+
+    .auto2 p
+    {
+        font-size: 1.05em;
+    }
+
+    .auto2 p:first-of-type
+    {
+        font-size: 1.2em;
     }
 
     .botoncoleccion
@@ -511,7 +594,7 @@ footer
 
     footer
     {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         align-items: center;
         padding: 1rem;
     }
@@ -520,11 +603,6 @@ footer
     .contenedorfoot2
     {
         width: 100%;
-    }
-
-    .contenedorfoot2 iframe
-    {
-        width: min(100%, 320px);
     }
 
     .sisi
