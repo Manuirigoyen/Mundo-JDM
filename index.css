@@ -326,7 +326,7 @@ p
     margin: 0;
     color: #f4f0e8;
     font-family: "shadow";
-    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-size: clamp(1.65rem, 2.7vw, 2.35rem);
     font-weight: 400;
     line-height: 1.15;
 }
