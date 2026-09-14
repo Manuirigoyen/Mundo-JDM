@@ -12,7 +12,12 @@
     <header>
     <nav class="flexbox">
         <img src="911amarillo.png" alt="Logox" class="logo">     
-        <ul class="list-navegacion flexbox">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-navegacion" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="list-navegacion flexbox" id="menu-navegacion">
                 <li class="listas"><a href="#inicioo">Inicio</a></li>
                 <li class="listas"><a href="#seccion">Descubrir</a></li> 
                 <li class="listas"><a href="#contactos">Contacto</a></li>
@@ -129,5 +134,24 @@
                 <a href="https://www.instagram.com/jdm.auto/?hl=es" class="redes"><img src="red3.png" alt="Instagram" class="redes"></a>
         </div>
     </footer>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navigationMenu = document.querySelector('.list-navegacion');
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', String(!isOpen));
+            menuToggle.setAttribute('aria-label', isOpen ? 'Abrir menu' : 'Cerrar menu');
+            navigationMenu.classList.toggle('menu-abierto', !isOpen);
+        });
+
+        navigationMenu.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.setAttribute('aria-label', 'Abrir menu');
+                navigationMenu.classList.remove('menu-abierto');
+            });
+        });
+    </script>
 </body>
 </html>
